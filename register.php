@@ -1,4 +1,5 @@
 <?php
+session_start();
 $con = mysqli_connect("localhost", "root", "", "social");
 
 if(mysqli_connect_errno()){
@@ -23,25 +24,33 @@ if(isset($_POST['register_button'])){
     $fname = strip_tags($_POST['reg_fname']); //去除html tags如<a><a>防injection攻擊
     $fname = str_replace(' ', '', $fname); //把fname裡空格改成''＝去除空格
     $fname = ucfirst(strtolower($fname));//Uppercase first letter
+    $_SESSION['reg_fname'] = $fname; //Stores first name into session variable
 
     //Last name
     $lname = strip_tags($_POST['reg_lname']); //去除html tags如<a><a>防injection攻擊
     $lname = str_replace(' ', '', $lname); //把fname裡空格改成''＝去除空格
     $lname = ucfirst(strtolower($lname));//Uppercase first letter
+    $_SESSION['reg_lname'] = $lname; //Stores last name into session variable
+
 
     //email
     $em = strip_tags($_POST['reg_email']); //去除html tags如<a><a>防injection攻擊
     $em = str_replace(' ', '', $em); //把fname裡空格改成''＝去除空格
     $em = ucfirst(strtolower($em));//Uppercase first letter
+    $_SESSION['reg_email'] = $em; //Stores email into session variable
+
 
     //email2
     $em2 = strip_tags($_POST['reg_email2']); //去除html tags如<a><a>防injection攻擊
     $em2 = str_replace(' ', '', $em2); //把fname裡空格改成''＝去除空格
     $em2 = ucfirst(strtolower($em2));//Uppercase first letter
+    $_SESSION['reg_email2'] = $em2; //Stores email2 into session variable
+
 
     //password
     $password = strip_tags($_POST['reg_password']); //去除html tags如<a><a>防injection攻擊
     $password2 = strip_tags($_POST['reg_password2']); //去除html tags如<a><a>防injection攻擊
+
 
     $date = date("Y-m-d") ; //current date
 
@@ -100,13 +109,29 @@ if(isset($_POST['register_button'])){
 <body>
 
     <form action="register.php" method="POST">
-        <input type="text" name="reg_fname" placeholder="First Name" required>
+        <input type="text" name="reg_fname" placeholder="First Name" value="<?php
+        if(isset($_SESSION['reg_fname'])){
+            echo $_SESSION['reg_fname'];
+        }
+        ?>" required>
         <br>
-        <input type="text" name="reg_lname" placeholder="Last Name" required>
+        <input type="text" name="reg_lname" placeholder="Last Name" value="<?php
+        if(isset($_SESSION['reg_lname'])){
+            echo $_SESSION['reg_lname'];
+        }
+        ?>" required>
         <br>
-        <input type="email" name="reg_email" placeholder="Email" required>
+        <input type="email" name="reg_email" placeholder="Email" value="<?php
+        if(isset($_SESSION['reg_email'])){
+            echo $_SESSION['reg_email'];
+        }
+        ?>" required>
         <br>
-        <input type="email" name="reg_email2" placeholder="Confirm Email" required>
+        <input type="email" name="reg_email2" placeholder="Confirm Email" value="<?php
+        if(isset($_SESSION['reg_email2'])){
+            echo $_SESSION['reg_email2'];
+        }
+        ?>" required>
         <br>
         <input type="password" name="reg_password" placeholder="Password" required>
         <br>
