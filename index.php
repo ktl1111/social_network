@@ -4,8 +4,9 @@
     if(mysqli_connect_errno()){
         echo "Failed to connect: " . mysqli_connect_errno;
     }
-    
-    $query = mysqli_query($con, "INSERT INTO test(id, name) VALUES(NULL,'Vany')");
+
+    $query = mysqli_query($con, "INSERT INTO test VALUES ('2', 'Optimus Prime')");
+
     ?>
 <html>
 <head>
