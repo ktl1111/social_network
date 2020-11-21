@@ -105,12 +105,23 @@ if(isset($_POST['register_button'])){
         $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username = '$username'");
 
         $i = 0;
+
+        $temp_username = $username;
         //if username exists add number to username
         while(mysqli_num_rows($check_username_query) != 0){
             $i++;
-            $username = $username . "_" . $i;
-            $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username = '$username'");
+            $temp_username = $username . "_" . $i; //mike_1
+            $check_username_query = mysqli_query($con, "SELECT username FROM users WHERE username = '$temp_username'");
         }
+
+        $username = $temp_username;
+
+        //Profile picture assignment
+        $rand = rand(1,2); //Random number between 1 and 2
+        if($rand == 1)
+            $profile_pic = "assets/images/profile_pics/default/head_black.png";
+        else if($rand == 2)
+            $profile_pic = "assets/images/profile_pics/default/head_white.png";
     }
 
 
