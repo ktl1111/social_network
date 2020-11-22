@@ -7,6 +7,7 @@ require 'includes/form_handlers/login_handler.php';
 <html>
 <head>
     <title>Welcome to Swirlfeed</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/register_style.css" >
 </head>
 <body>
 
