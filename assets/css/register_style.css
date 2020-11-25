@@ -1,3 +1,17 @@
+@font-face {
+    font-family: "Bellota-LightItalic";
+    src: url("../fonts/Bellota-LightItalic.otf");
+}
+@font-face {
+    font-family: "Bellota-BoldItalic";
+    src: url("../fonts/Bellota-BoldItalic.otf");
+}
+
+hrml, body{
+    height: 100%;
+    min-height: 100%;
+}
+
 form {
     text-align: center;
 }
@@ -15,6 +29,7 @@ body {
 }
 
 .login_box {
+    font-family: 'Bellota-LightItalic', sans-serif;
     position: relative;
     margin-right: auto;
     margin-left: auto;
@@ -28,6 +43,7 @@ body {
 }
 
 .login_header {
+    font-family: 'Bellota-LightItalic', sans-serif;
     width:100%; /*relative to the div surround it, in this case the.login_box div*/
     height: 90px;
     background-color: #3498DB;
@@ -38,7 +54,10 @@ body {
 }
 
 .login_header h1 {
+    font-family: 'Bellota-BoldItalic', sans-serif;
     margin-top: 0;
     margin-bottom: 0;
     color: #2C6C96;
+    text-shadow: #73B6E2 0.5px 0.5px 0px;
+    font-size: 250%;
 }
