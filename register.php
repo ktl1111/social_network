@@ -28,7 +28,7 @@ require 'includes/form_handlers/login_handler.php';
                 <br>
                 <input type="password" name="log_password" placeholder="Password">
                 <br>
-                <input type="submit" name="login_button" placeholder="Login">
+                <input type="submit" name="login_button" placeholder="Login" value="Login">
                 <br>
                 <?php if(in_array("Email or password was incorrect<br>", $error_array)) echo "Email or password was incorrect<br>"; ?>
 
