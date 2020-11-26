@@ -20,6 +20,11 @@ body {
     padding:0;
 }
 
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
 .wrapper {
     background-image: url("../images/background/desktop.jpg");
     background-size: 100%;
@@ -85,4 +90,8 @@ input[type="text"], input[type="email"], input[type="password"]{
 
 input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover{
     border-color: #3498db;
+}
+
+#second {
+    display: none;
 }
