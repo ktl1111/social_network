@@ -1,12 +1,8 @@
 <?php
-    require 'config/config.php';
+include("includes/header.php");
+session_destroy(); //session is distroy when we refresh the page
+?>
 
-    ?>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
 Hello Reece!!
 </body>
 </html>
